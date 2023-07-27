@@ -8,7 +8,7 @@ export default function Categories() {
         <div className='catContainer'>
             {categories.map(item => (
                 <Categoryitem item={item}/>
-            ))}
+            ))} 
         </div>
       )
     }
