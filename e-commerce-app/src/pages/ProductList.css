@@ -1,0 +1,32 @@
+/* .prodLiContainer{
+
+} */
+
+.prodLiTitle{
+    margin: 20px;
+}
+
+.prodLiFilterContainer{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.prodLiFilter{
+    margin: 20px;
+}
+
+.prodLiFilterText{
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.prodLiSelect{
+    padding: 10px;
+    margin-right: 20px;
+}
+
+/* .prodLiOption{
+
+} */
