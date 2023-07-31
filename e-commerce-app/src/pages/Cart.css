@@ -1,0 +1,40 @@
+.cartContainer{
+
+}
+
+.cartWrapper{
+    padding: 20px;
+}
+
+.cartTitle{
+    font-weight: 300;
+    text-align: center;
+}
+
+.cartTop{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    
+}
+
+.cartBottom{
+
+}
+
+.cartTopBtn{
+    padding: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cartTopTextContainer{
+
+}
+
+.cartTopText{
+    text-decoration: underline;
+    cursor: pointer;
+    margin: 0px 10px;
+}
