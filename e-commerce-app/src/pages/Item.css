@@ -1,0 +1,102 @@
+/* .itemContainer{
+
+} */
+
+.itemWrapper{
+    padding: 50px;
+    display: flex;
+}
+
+.itemImage{
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.itemImgContainer{
+    flex: 1;
+}
+
+.itemInfoContainer{
+    flex: 1;
+    padding: 0px 50px;
+}
+
+.itemTitle{
+    font-weight: 200;
+}
+
+.itemDesc{
+    margin: 20px 0px;
+}
+
+.itemPrice{
+    font-weight: 100;
+    font-size: 40px;
+}
+
+.itemFilterContainer{
+    width: 50%;
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.itemFilter{
+    display: flex;
+    align-items: center;
+}
+
+.itemFilterTitle{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.itemFilterColor{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+.itemFilterSize{
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.itemAddContainer{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.itemQtyContainer{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.itemQty{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid teal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 5px;
+}
+
+.itemCartBtn{
+    padding: 15px;
+    border: 2px solid teal;
+    background-color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.itemCartBtn:hover{
+    background-color: floralwhite;
+}
