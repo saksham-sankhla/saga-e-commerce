@@ -1,38 +1,38 @@
-.container{
+.navContainer{
     height: 60px;
 }
 
-.wrapper{
+.navWrapper{
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;   
     align-items: center;
 }
 
-.left{
+.navLeft{
     flex: 1;
     display: flex;
     align-items: center;
 }
 
-.center{
+.navCenter{
     flex: 1;
     text-align: center;
 }
 
-.right{
+.navRight{
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex: 1;
 }
 
-.language{
+.navLanguage{
     font-size: 14px;
     cursor: pointer;
 }
 
-.searchContainer{
+.navSearchContainer{
     border: 1px solid lightgray;
     display: flex;
     align-items: center;
@@ -40,15 +40,16 @@
     padding: 5px;
 }
 
-.input{
+.navInput{
     border: none;
+    outline: none;
 }
 
-.logo{
+.navLogo{
     font-weight: bold; 
 }
 
-.menuItem{
+.navMenuItem{
     font-style: 14px;
     cursor: pointer;
     margin-left: 25px;

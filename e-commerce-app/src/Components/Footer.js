@@ -6,9 +6,25 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import PlaceIcon from '@mui/icons-material/Place';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import EmailIcon from '@mui/icons-material/Email';
+import { useNavigate } from 'react-router-dom';
 
 export default function Footer() {
-  return (
+
+    const navigate = useNavigate()
+
+    function navHomeRoute(){
+        navigate('/')
+    }
+
+    function navCartRoute(){
+        navigate('/Cart')
+    }
+
+    function navProdRoute(){
+        navigate('/ProductList')
+    }
+
+    return (
     <div className='footerContainer'>
         <div className='footerLeft'>
             <h1 className='footerLeftLogo'>SAGA</h1>
@@ -30,10 +46,10 @@ export default function Footer() {
         <div className='footerCenter'>
             <h3 className='footerCenterTitle'>Useful Links</h3>
             <ul className='footerCenterList'>
-                <li className='footerCenterListItem'>Home</li>
-                <li className='footerCenterListItem'>Cart</li>
-                <li className='footerCenterListItem'>Men's Fashion</li>
-                <li className='footerCenterListItem'>Women's Fashion</li>
+                <li className='footerCenterListItem' onClick={navHomeRoute}>Home</li>
+                <li className='footerCenterListItem' onClick={navCartRoute}>Cart</li>
+                <li className='footerCenterListItem' onClick={navProdRoute}>Men's Fashion</li>
+                <li className='footerCenterListItem' onClick={navProdRoute}>Women's Fashion</li>
                 <li className='footerCenterListItem'>Accessories</li>
                 <li className='footerCenterListItem'>My Account</li>
                 <li className='footerCenterListItem'>Order Tracking</li>

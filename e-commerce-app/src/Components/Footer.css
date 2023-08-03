@@ -51,6 +51,7 @@
 .footerCenterListItem{
     width: 50%;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .footerRightContactItem{

@@ -5,10 +5,16 @@ import './Products.css'
 import { popularProducts } from '../data'
 
 export default function Products() {
+  
+  const handleProductClick = (product) => {
+    console.log('Product Clicked: ', product)
+  }
+
+
   return (
     <div className='prodContainer'>
         {popularProducts.map((item) => {
-          return <ProductComp item={item} key={item.id} />
+          return <ProductComp item={item} key={item.id} onProductClick={handleProductClick} />
 })}
     </div>
   ) 

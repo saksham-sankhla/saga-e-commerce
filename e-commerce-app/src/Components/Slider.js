@@ -3,6 +3,7 @@ import "./Slider.css";
 import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
 import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import { sliderItems } from "../data";
+import { useNavigate } from "react-router-dom";
 
 export default function Slider() {
     
@@ -17,6 +18,11 @@ export default function Slider() {
         }
     }
     
+    const navigate = useNavigate()
+
+    function shopRouteHandler(){
+      navigate("/ProductList")
+    }
 
   return (
     <div className="container">
@@ -32,7 +38,7 @@ export default function Slider() {
         <div className="infoContainer">
           <h1 className="title">{item.title}</h1>
           <p className="desc">{item.desc}</p>
-          <button className="btn">SHOP NOW</button>
+          <button className="btn" onClick={shopRouteHandler}>SHOP NOW</button>
         </div>
       </div>
         ))}
