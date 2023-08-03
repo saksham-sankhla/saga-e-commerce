@@ -10,7 +10,8 @@ export default function ProductComp({item, onProductClick}) {
 
     const [likeItem, setLikeItem] = React.useState(item)
 
-    function likeBtn(){
+    function likeBtn(e){
+        e.stopPropagation();
         setLikeItem(prevItem =>(
             {   ...prevItem,
                 liked: !prevItem.liked
@@ -18,8 +19,13 @@ export default function ProductComp({item, onProductClick}) {
         ))
     }
 
+    function preventRedirect(e){
+        e.stopPropagation();
+    }
+
     const likeBg = likeItem.liked ? '#CD5C5C' : 'white';
     const btnColor = likeItem.liked ? 'white' : 'black';
+
 
     function handleProductClick(){
         onProductClick(item)
@@ -30,13 +36,13 @@ export default function ProductComp({item, onProductClick}) {
         <div className='prodCompCircle'></div>
         <img className='prodCompImage' src={item.img} alt="" />
         <div className='prodCompInfo'>
-            <div className='prodCompIconContainer'>
+            <div className='prodCompIconContainer' onClick={(e) => preventRedirect(e)}>
                 <ShoppingCartOutlinedIcon />
             </div>
-            <div className='prodCompIconContainer'>
+            <div className='prodCompIconContainer' onClick={(e) => preventRedirect(e)}>
                 <SearchOutlinedIcon />
             </div>
-            <div className='prodCompIconContainer' style={{backgroundColor: likeBg}} onClick={likeBtn}>
+            <div className='prodCompIconContainer' style={{backgroundColor: likeBg}} onClick={(e) => likeBtn(e)}>
                 <FavoriteBorderOutlinedIcon style={{color: btnColor}} />
             </div>
         </div>

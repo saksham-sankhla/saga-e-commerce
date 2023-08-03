@@ -1,13 +1,15 @@
 import React from 'react'
-// import { popularProducts } from '../data'
 import ProductComp from './ProductComp'
 import './Products.css'
 import { popularProducts } from '../data'
+import { useNavigate } from 'react-router-dom'
 
 export default function Products() {
   
+  const navigate = useNavigate()
+
   const handleProductClick = (product) => {
-    console.log('Product Clicked: ', product)
+    navigate(`/Item/${product.id}`)
   }
 
 

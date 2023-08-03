@@ -9,18 +9,19 @@ import Cart from './pages/Cart'
 import {BrowserRouter as Main, Route, Routes} from 'react-router-dom'
 
 const App = () => {
-  return(
+    
+    return(
     <Main>
       <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/ProductList" element={<ProductList/>} />
-        <Route exact path="/Item" element={<Item/>} />
+        <Route exact path="/Item/:productId" element={<Item/>} />
+        {/* <Route path="/Item/:productId" component={<Item />} /> */}
         <Route exact path="/Register" element={<Register/>} />
         <Route exact path="/Login" element={<Login/>} />
         <Route exact path="/Cart" element={<Cart/>} />
       </Routes>
     </Main>
-    
    )
 };
 
