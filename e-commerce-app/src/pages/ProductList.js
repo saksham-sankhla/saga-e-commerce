@@ -7,6 +7,8 @@ import Newsletter from "../Components/Newsletter"
 import Footer from "../Components/Footer"
 
 export default function ProductList() {
+
+
   return (
     <div className='prodLiContainer'>
         <Navbar />
