@@ -1,10 +1,9 @@
 import React from 'react'
 import ProductComp from './ProductComp'
 import './Products.css'
-import { popularProducts } from '../data'
 import { useNavigate } from 'react-router-dom'
 
-export default function Products() {
+export default function Products({sortedProducts}) {
   
   const navigate = useNavigate()
 
@@ -15,7 +14,7 @@ export default function Products() {
 
   return (
     <div className='prodContainer'>
-        {popularProducts.map((item) => {
+        {sortedProducts.map((item) => {
           return <ProductComp item={item} key={item.id} onProductClick={handleProductClick} />
 })}
     </div>

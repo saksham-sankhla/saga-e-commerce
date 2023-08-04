@@ -2,14 +2,35 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import Announcements from '../Components/Announcements'
 import './ProductList.css'
-import Products from "../Components/Products"
 import Newsletter from "../Components/Newsletter"
 import Footer from "../Components/Footer"
+import { popularProducts } from '../data'
+//import ProductComp from '../Components/ProductComp'
+import Products from '../Components/Products'
 
 export default function ProductList() {
 
+    // const [sortState, setSortState] = React.useState('newest')
+    const [products, setProducts] = React.useState(popularProducts)
 
-  return (
+    function handleSortChange(event){
+        
+        const selectedSortingOrder = event.target.value;
+        console.log("called!", selectedSortingOrder)
+        
+
+        if(selectedSortingOrder === 'asc'){
+            setProducts(popularProducts.slice().sort((a,b) => a.price - b.price))
+        } else if(selectedSortingOrder === 'desc'){
+            setProducts(popularProducts.slice().sort((a,b) => b.price - a.price))
+        } else if(selectedSortingOrder === 'newest'){
+            setProducts(popularProducts.slice().sort((a,b) => a.id - b.id))
+        }
+    }
+
+    console.log(products)
+
+    return (
     <div className='prodLiContainer'>
         <Navbar />
         <Announcements />
@@ -39,14 +60,17 @@ export default function ProductList() {
                 </select>
             </div>
             <div className='prodLiFilter'><span className='prodLiFilterText'>Sort Products:</span>
-                <select className='prodLiSelect'>
-                    <option className='prodLiOption' select>Newest</option>
-                    <option className='prodLiOption'>Price (asc)</option>
-                    <option className='prodLiOption'>Price (desc)</option>
+                <select className='prodLiSelect' onChange={(e) => handleSortChange(e)}>
+                    <option className='prodLiOption' value='newest' select>Newest</option>
+                    <option className='prodLiOption' value='asc' >Price (asc)</option>
+                    <option className='prodLiOption' value='desc'>Price (desc)</option>
                 </select>
             </div>
         </div>
-        <Products />
+        {/* {products.map((item) => {
+            return <ProductComp item={item} key={item.id} />
+        })} */}
+        <Products sortedProducts={products}/>
         <Newsletter />
         <Footer />
     </div>
