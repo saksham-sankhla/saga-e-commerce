@@ -5,8 +5,6 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import './ProductComp.css'
 
 export default function ProductComp({item, onProductClick}) {
-  
-     
 
     const [likeItem, setLikeItem] = React.useState(item)
 
@@ -45,6 +43,13 @@ export default function ProductComp({item, onProductClick}) {
             <div className='prodCompIconContainer' style={{backgroundColor: likeBg}} onClick={(e) => likeBtn(e)}>
                 <FavoriteBorderOutlinedIcon style={{color: btnColor}} />
             </div>
+        </div>
+        <div className='prodDetailsContainer'>
+            <div className='prodDetails'>
+                <span className='prodName'>{item.name}</span>
+                <span className='prodprice'>${item.price}</span>
+            </div>
+            
         </div>
     </div>
   )

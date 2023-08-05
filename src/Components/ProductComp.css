@@ -5,6 +5,7 @@
     height: 350px;
     background-color: lemonchiffon;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -61,4 +62,22 @@
     width: 100%;
     z-index: 3;
     object-fit: cover;
+    overflow: hidden;
+}
+
+.prodDetailsContainer{
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.prodDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    z-index: 6;
+}
+
+.prodName{
+    font-weight: 500;
 }
