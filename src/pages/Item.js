@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Item.css'
 import Navbar from "../Components/Navbar"
 import Announcements from "../Components/Announcements"
@@ -8,6 +8,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { popularProducts } from '../data'
 import { useParams } from 'react-router-dom'
+import cartContext from '../Context/CartContext'
 
 export default function Item() {
 let {productId} = useParams()
@@ -16,6 +17,17 @@ const product = popularProducts.find(obj => {
     return obj.id === numProduct;
     
 })
+
+    const cartStateSet = useContext(cartContext)
+    const cartItems = cartStateSet.cartItems
+    const handleAddToCart = () => cartStateSet.addItemToCart (product)
+
+    const inCart = cartItems.some((cartItem) => cartItem.id === product.id)
+
+    const btnText = inCart ? 'ADDED TO CART' : 'ADD TO CART'
+    const btnColor = inCart ? '#d9f99d' : 'white'
+    
+    console.log(btnText)
 
 
 return (
@@ -57,7 +69,7 @@ return (
                         <span className='itemQty'>1</span>
                         <AddIcon />
                     </div>
-                    <button className='itemCartBtn'>ADD TO CART</button>
+                    <button className='itemCartBtn' onClick={handleAddToCart} style={{backgroundColor: btnColor}}>{btnText}</button>
                 </div>
             </div>
         </div>

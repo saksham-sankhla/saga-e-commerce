@@ -151,3 +151,8 @@
     color: white;
     font-weight: 600;
 }
+
+.cartEmpty{
+    text-align: center;
+    margin: 100px auto 100px auto;
+}

@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Badge } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import cartContext from "../Context/CartContext";
 
 export default function Navbar() {
+
+  const cartStateSet = useContext(cartContext)
+  const cartItems = cartStateSet.cartItems
   
   const navigate = useNavigate()
 
@@ -18,7 +22,7 @@ export default function Navbar() {
   }
 
   function cartRoute(){
-    navigate("/Cart")
+    navigate("/CartPage")
   }
 
   return (
@@ -38,7 +42,7 @@ export default function Navbar() {
           <div className='navMenuItem' onClick={registerRoute}>REGISTER</div>
           <div className='navMenuItem' onClick={signInRoute}>LOGIN</div>
           <div className='navMenuItem'>
-            <Badge badgeContent={4} color="primary" onClick={cartRoute}>
+            <Badge badgeContent={cartItems.length} color="primary" onClick={cartRoute}>
               <ShoppingCartOutlinedIcon />
             </Badge>
           </div>
