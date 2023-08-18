@@ -10,7 +10,8 @@ export default function ProductComp({item, onProductClick, onCartClick, cartItem
 
     const inCart = cartItems.some((cartItem) => cartItem.id === item.id)
 
-    const cartIconColor = inCart ? '#EBE76C' : 'white';
+    const cartBgColor = inCart ? '#134e4a' : 'white';
+    const cartIconColor = inCart ? 'white' : 'black';
 
     function likeBtn(e){
         e.stopPropagation();
@@ -42,7 +43,7 @@ export default function ProductComp({item, onProductClick, onCartClick, cartItem
         <div className='prodCompCircle'></div>
         <img className='prodCompImage' src={item.img} alt="" />
         <div className='prodCompInfo'>
-            <div className='prodCompIconContainer' style={{backgroundColor: cartIconColor}} onClick= {(e) => {preventRedirect(e); handleAddToCart()}}  >
+            <div className='prodCompIconContainer' style={{backgroundColor: cartBgColor, color: cartIconColor}} onClick= {(e) => {preventRedirect(e); handleAddToCart()}}  >
                 <ShoppingCartOutlinedIcon />
             </div>
             <div className='prodCompIconContainer' onClick={(e) => preventRedirect(e)}>

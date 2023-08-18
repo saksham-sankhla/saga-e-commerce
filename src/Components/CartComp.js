@@ -23,7 +23,7 @@ export default function CartComp({ item }) {
               style={{ backgroundColor: "black" }}
             />
             <span className="cartProductSize">
-              <b>Size:</b>UK-7
+              <b>Size:</b>{item.size}
             </span>
           </div>
         </div>

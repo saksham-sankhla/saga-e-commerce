@@ -7,11 +7,13 @@ import Login from "./pages/Login";
 import {BrowserRouter as Main, Route, Routes} from 'react-router-dom'
 import CartState from "./Context/CartState";
 import CartPage from "./pages/CartPage";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {
     
     return(
     <Main>
+      <ScrollToTop />
       <CartState>
         <Routes>
           <Route exact path="/" element={<Home/>} />

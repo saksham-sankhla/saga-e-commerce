@@ -18,14 +18,17 @@ const product = popularProducts.find(obj => {
     
 })
 
+const [productSize, setProductSize] = React.useState('S')
+
     const cartStateSet = useContext(cartContext)
     const cartItems = cartStateSet.cartItems
-    const handleAddToCart = () => cartStateSet.addItemToCart (product)
+    const handleAddToCart = () => cartStateSet.addItemToCart (product, productSize)
 
     const inCart = cartItems.some((cartItem) => cartItem.id === product.id)
 
     const btnText = inCart ? 'ADDED TO CART' : 'ADD TO CART'
-    const btnColor = inCart ? '#d9f99d' : 'white'
+    const btnColor = inCart ? '#134e4a' : 'white'
+    const btnTextColor = inCart ? 'white' : 'black'
     
     console.log(btnText)
 
@@ -53,12 +56,12 @@ return (
                     </div>
                     <div className='itemFilter'>
                         <span className='itemFilterTitle>'>Size</span>
-                        <select className='itemFilterSize'>
-                            <option className='itemFilterSizeOption'>XS</option>
-                            <option className='itemFilterSizeOption'>S</option>
-                            <option className='itemFilterSizeOption'>M</option>
-                            <option className='itemFilterSizeOption'>L</option>
-                            <option className='itemFilterSizeOption'>XL</option>
+                        <select className='itemFilterSize' value={productSize} onChange={(e) => setProductSize(e.target.value)}>
+                            <option className='itemFilterSizeOption' value='XS' >XS</option>
+                            <option className='itemFilterSizeOption' value='S' selected='selected' >S</option>
+                            <option className='itemFilterSizeOption' value='M' >M</option>
+                            <option className='itemFilterSizeOption' value='L' >L</option>
+                            <option className='itemFilterSizeOption' value='XL' >XL</option>
                         </select>
                         
                     </div>
@@ -69,7 +72,7 @@ return (
                         <span className='itemQty'>1</span>
                         <AddIcon />
                     </div>
-                    <button className='itemCartBtn' onClick={handleAddToCart} style={{backgroundColor: btnColor}}>{btnText}</button>
+                    <button className='itemCartBtn' onClick={handleAddToCart} style={{backgroundColor: btnColor, color: btnTextColor}}>{btnText}</button>
                 </div>
             </div>
         </div>
