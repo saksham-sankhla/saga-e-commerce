@@ -3,7 +3,7 @@ import './Login.css'
 
 export default function Login() {
   return (
-    <div className='loginContainer'>
+      <div className='loginContainer'>
         <div className='loginWrapper'>
             <h1 className='loginTitle'>SIGN IN</h1>
             <form className='loginForm'>
@@ -14,6 +14,6 @@ export default function Login() {
                 <button className='loginBtn'>LOGIN</button>
             </form>
         </div>
-    </div>
+    </div>    
   )
 }

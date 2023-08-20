@@ -46,7 +46,8 @@
 }
 
 .navLogo{
-    font-weight: bold; 
+    font-weight: bold;
+    cursor: pointer; 
 }
 
 .navMenuItem{

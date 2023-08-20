@@ -25,6 +25,10 @@ export default function Navbar() {
     navigate("/CartPage")
   }
 
+  function homeRoute(){
+    navigate("/")
+  }
+
   return (
     <div className='navContainer'>
       <div className='navWrapper'>
@@ -36,7 +40,7 @@ export default function Navbar() {
           </div>
         </div>
         <div className='navCenter'>
-          <h1 className='navLogo'>SAGA</h1>
+          <h1 className='navLogo' onClick={homeRoute}>SAGA</h1>
         </div>
         <div className='navRight'>
           <div className='navMenuItem' onClick={registerRoute}>REGISTER</div>
