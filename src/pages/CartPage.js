@@ -15,7 +15,7 @@ export default function CartPage() {
 
     let sum = 0;
     for(let i = 0; i < cartItems.length; i++){
-        sum = sum + cartItems[i].price
+        sum = sum + cartItems[i].quantity * cartItems[i].price
     }
 
     console.log(sum)

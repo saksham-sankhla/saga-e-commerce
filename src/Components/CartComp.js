@@ -1,7 +1,6 @@
 import React from "react";
 import "./CartComp.css";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+
 
 export default function CartComp({ item }) {
   console.log(item);
@@ -29,11 +28,9 @@ export default function CartComp({ item }) {
         </div>
         <div className="cartPriceDetails">
           <div className="cartAmountContainer">
-            <AddIcon />
-            <div className="cartProdQuant">2</div>
-            <RemoveIcon />
+            <div className="cartProdQuant">Product Quantity: {item.quantity}</div>
           </div>
-          <div className="cartProdPrice">$ {item.price}</div>
+          <div className="cartProdPrice">Price: $ {item.price}</div>
         </div>
       </div>
       <hr className="divider" />

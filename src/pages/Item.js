@@ -19,10 +19,22 @@ const product = popularProducts.find(obj => {
 })
 
 const [productSize, setProductSize] = React.useState('S')
+const [prodQuantity, setProdQuantity] = React.useState(1)
+
+function addProd(){
+    setProdQuantity(prevQuant => prevQuant + 1)
+  }
+
+  function removeProd(){
+    if (prodQuantity > 1) {
+        setProdQuantity(prevQuant => prevQuant - 1)
+    }
+  }
 
     const cartStateSet = useContext(cartContext)
     const cartItems = cartStateSet.cartItems
-    const handleAddToCart = () => cartStateSet.addItemToCart (product, productSize)
+    const handleAddToCart = () => cartStateSet.addItemToCart (product, productSize, prodQuantity)
+    
 
     const inCart = cartItems.some((cartItem) => cartItem.id === product.id)
 
@@ -68,9 +80,9 @@ return (
                 </div>
                 <div className='itemAddContainer'>
                     <div className='itemQtyContainer'>
-                        <RemoveIcon />
-                        <span className='itemQty'>1</span>
-                        <AddIcon />
+                        <RemoveIcon onClick={removeProd}/>
+                        <span className='itemQty'>{prodQuantity}</span>
+                        <AddIcon onClick={addProd}/>
                     </div>
                     <button className='itemCartBtn' onClick={handleAddToCart} style={{backgroundColor: btnColor, color: btnTextColor}}>{btnText}</button>
                 </div>

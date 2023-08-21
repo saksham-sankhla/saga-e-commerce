@@ -1,5 +1,5 @@
 import React from 'react'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+// import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import './ProductComp.css'
@@ -8,10 +8,10 @@ export default function ProductComp({item, onProductClick, onCartClick, cartItem
 
     const [likeItem, setLikeItem] = React.useState(item)
 
-    const inCart = cartItems.some((cartItem) => cartItem.id === item.id)
+    // const inCart = cartItems.some((cartItem) => cartItem.id === item.id)
 
-    const cartBgColor = inCart ? '#134e4a' : 'white';
-    const cartIconColor = inCart ? 'white' : 'black';
+    // const cartBgColor = inCart ? '#134e4a' : 'white';
+    // const cartIconColor = inCart ? 'white' : 'black';
 
     function likeBtn(e){
         e.stopPropagation();
@@ -34,18 +34,18 @@ export default function ProductComp({item, onProductClick, onCartClick, cartItem
         onProductClick(item)
     }
 
-    function handleAddToCart(){
-        onCartClick(item)
-    }
+    // function handleAddToCart(){
+    //     onCartClick(item)
+    // }
 
     return (
     <div className='prodCompContainer' onClick={handleProductClick}>
         <div className='prodCompCircle'></div>
         <img className='prodCompImage' src={item.img} alt="" />
         <div className='prodCompInfo'>
-            <div className='prodCompIconContainer' style={{backgroundColor: cartBgColor, color: cartIconColor}} onClick= {(e) => {preventRedirect(e); handleAddToCart()}}  >
+            {/* <div className='prodCompIconContainer' style={{backgroundColor: cartBgColor, color: cartIconColor}} onClick= {(e) => {preventRedirect(e); handleAddToCart()}}  >
                 <ShoppingCartOutlinedIcon />
-            </div>
+            </div> */}
             <div className='prodCompIconContainer' onClick={(e) => preventRedirect(e)}>
                 <SearchOutlinedIcon />
             </div>
